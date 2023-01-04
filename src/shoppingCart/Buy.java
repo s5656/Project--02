@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Buy {
-    public static void main(String[] args) {
+    public static void main(String[] args) {//main method
         Shopping shopping=new Shopping();
     ArrayList<Products> cart = new ArrayList();
     Scanner in =new Scanner(System.in);
