@@ -7,7 +7,7 @@ public class Shopping {
         int count=0;
         for (Products milk:milkbill){
             if (milk.getName().equalsIgnoreCase("milk")) {
-                count++;
+                count++;//count
             }
         }
         if (count==2) {
