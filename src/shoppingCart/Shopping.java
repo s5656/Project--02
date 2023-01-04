@@ -3,7 +3,7 @@ package shoppingCart;
 import java.util.ArrayList;
 
 public class Shopping {
-    public void milkOffer(ArrayList<Products> milkbill){
+    public void milkOffer(ArrayList<Products> milkbill){//milk offer
         int count=0;
         for (Products milk:milkbill){
             if (milk.getName().equalsIgnoreCase("milk")) {
