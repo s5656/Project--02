@@ -11,6 +11,7 @@ public class Shopping {
             }
         }
         if (count>=2) {
+            System.out.println("You got one Liter milk free");
             milkbill.add(new Products("Milk", 34));
         }
     }
