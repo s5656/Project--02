@@ -10,11 +10,7 @@ public class Shopping {
                 count++;//count
             }
         }
-        if (count==2) {
-            milkbill.add(new Products("Milk", 34));
-        }
-        if (count==4) {
-            milkbill.add(new Products("Milk", 34));
+        if (count>=2) {
             milkbill.add(new Products("Milk", 34));
         }
     }
