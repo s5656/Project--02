@@ -38,7 +38,8 @@ public class Buy {
     System.out.println("Product in cart are"+cart);
 
     EPayment ePayment =new EPayment();
-    System.out.println("You have to pay "+ePayment.payment(shopping.billGenration(cart)));
+    Bill bill=new Bill();
+    System.out.println("You have to pay "+ePayment.payment(bill.billGenration(cart)));
 
     shopping.milkOffer(cart);
     System.out.println("You got this products"+cart);

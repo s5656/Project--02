@@ -18,11 +18,4 @@ public class Shopping {
             milkbill.add(new Products("Milk", 34));
         }
     }
-    public double billGenration(ArrayList<Products> bill){
-        double rs =0;
-        for (Products amount:bill){
-            rs+=amount.getPrice();
-        }
-        return rs;
-    }
 }
