@@ -1,23 +1,35 @@
 package shoppingCart;
 
 import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.Collection;
+import java.util.HashMap;
 
 public class Buy {
-    public static void main(String[] args) {//main method
-        ArrayList<Products> cart = new ArrayList();
+    public static void main(String[] args) {
 
-        cart.add(new Products("Apple",200));
-        cart.add(new Products("Milk",34));
-        cart.add(new Products("NewsPaper",10));
-        //cart.add(new Products("Milk",34));
+        Product apple=new Product("Apple",20,12);
+        Product milk=new Product("Milk",34,2);
+        Product newsPaper=new Product("NewsPaper",10,1);
 
-        EPayment ePayment =new EPayment();
-        Bill bill=new Bill();
-        System.out.println("You have to pay "+ePayment.payment(bill.billGenration(cart)));
+        HashMap<Product,Integer> cartData =new HashMap<>();
+        cartData.put(apple, apple.getNoOfItems());
+        cartData.put(milk, milk.getNoOfItems());
+        cartData.put(newsPaper, newsPaper.getNoOfItems());
+
+        System.out.println("Your products in cart"+cartData);
+        Bill bill= new Bill();
+        bill.generateBill(cartData);
+
+        Offer offer=new Offer();
+        offer.cheakOffers(milk);
+        offer.cheakOffers(apple);
+        offer.cheakOffers(newsPaper);
 
 
-        System.out.println("Your products are "+cart);
+        System.out.println("you got this Products :"+cartData);
+        System.out.println("5% discount Offer is Applied on e-Wallet");
+        System.out.println("You have to pay :"+bill.eWalletPayment());
+
 
     }
 }

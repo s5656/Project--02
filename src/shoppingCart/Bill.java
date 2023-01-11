@@ -1,15 +1,19 @@
 package shoppingCart;
 
-import java.util.ArrayList;
+import java.util.HashMap;
 
-public class Bill {
-    public double billGenration(ArrayList<Products> bill){
-        Shopping shopping =new Shopping();
-        shopping.milkOffer(bill);
-        double rs =0;
-        for (Products amount:bill){
-            rs+=amount.getPrice();
+public class Bill implements BillGenrate{
+    double total;
+    public double eWalletPayment() {
+        if(total>=100)
+            return total-(total * 0.05) ;
+        else
+            return 0;
+    }
+    public void generateBill(HashMap<Product, Integer> cartData) {
+        for (HashMap.Entry<Product,Integer> map : cartData.entrySet()) {
+            total += (map.getKey().getPrice() * map.getValue());
         }
-        return rs;
+        System.out.println("Your total bill :"+total);
     }
 }
