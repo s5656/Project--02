@@ -3,19 +3,20 @@ package shoppingCart;
 public class Offer {
 
     public int getMilkOffer(int items) {
-        if (items >= 2) {
-            return (items+(items/2));
-        }
-        return items;
+        int num =items >= 2 ? items+(items/2):items;
+        return num;
     }
     public int offers(String name, int noOfItems) {
         if(name.equalsIgnoreCase("Milk")){
-            System.out.println("Milk has Offer Buy 2 get 1 free");
-            return getMilkOffer(noOfItems);
+            System.out.println("Offer: Buy 2 units of Milk  get 1 unit free");
+            int items=getMilkOffer(noOfItems);
+            System.out.println("You have brought "+noOfItems+" units of Milk. You get "+items+" units of Milk");
+            return items;
         }
-        return 0;
+        return noOfItems;
     }
-    public void cheakOffers(Product product){
-        product.setNoOfItems(offers(product.getName(), product.getNoOfItems()));
+    public void checkOffers(Product product){
+        int updatredItems  =offers(product.getName(), product.getNoOfItems());
+        product.setNoOfItems(updatredItems);
     }
 }
